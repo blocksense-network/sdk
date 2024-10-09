@@ -1,0 +1,10 @@
+[package]
+name = "blocksense_sdk"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wit-bindgen = "0.16.0"
+spin-sdk = "3.0.1"
+reqwest = "0.12"
+serde = "1.0"
