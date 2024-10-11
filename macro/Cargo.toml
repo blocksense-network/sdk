@@ -1,5 +1,7 @@
 [package]
 name = "blocksense-macro"
+version = "0.1.0"
+edition = "2021"
 
 description = """
 Rust procedural macros for Blocksense and associated WIT files
