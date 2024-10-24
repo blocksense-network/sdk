@@ -1,2 +1,5 @@
 # sdk
-SDK of blocksense for the purpose of ETHSofia 2024 Hackaton
+SDK of blocksense for compiling oracle scripts in Rust.
+
+Please check to official blocksense [docs](https://docs.blocksense.network/docs/architecture)
+
