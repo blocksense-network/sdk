@@ -1,0 +1,44 @@
+[oracle_config]
+name = "pepe-price-oracle"
+description = "PEPE USD price feed from mock centralized exchanges"
+version = "0.1.0"
+
+[network]
+chain_id = 421614  # Arbitrum Sepolia testnet
+rpc_url = "https://sepolia-rollup.arbitrum.io/rpc"
+name = "arbitrum-sepolia"
+
+[data_feeds]
+[[data_feeds.feeds]]
+id = "pepe_usd_price"
+description = "PEPE price in USD"
+update_threshold = 0.5  # Update if price changes by 0.5%
+heartbeat_interval = 300  # 5 minutes
+
+[[data_feeds.feeds]]
+id = "pepe_volume_24h"
+description = "PEPE 24h trading volume"
+update_threshold = 10.0  # Update if volume changes by 10%
+heartbeat_interval = 900  # 15 minutes
+
+[[data_feeds.feeds]]
+id = "pepe_market_status"
+description = "PEPE market status indicator"
+update_threshold = 0.0  # Always update on change
+heartbeat_interval = 600  # 10 minutes
+
+[sources]
+exchanges = [
+    "binance_mock",
+    "coinbase_mock", 
+    "kraken_mock",
+    "bybit_mock",
+    "okx_mock"
+]
+min_sources = 3
+aggregation_method = "median"
+
+[deployment]
+target = "arbitrum-sepolia"
+gas_limit = 500000
+max_gas_price = "20000000000"  # 20 gwei
